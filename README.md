@@ -6,10 +6,10 @@
 
 
 #### Camara Unica
-![alt text](https://github.com/matiasba/beelup_video_downloader/blob/main/img/single.jpg?raw=true "Camara unica")
+<img src="img/single.jpg" alt="drawing" height="400" title="Camara unica"/>
 
 #### Camara Doble
-![alt text](https://github.com/matiasba/beelup_video_downloader/blob/main/img/double.jpg?raw=true "Camara doble")
+<img src="img/double.jpg" alt="drawing" height="400" title="Camara doble"/>
 
 ## Requisitos:
 
