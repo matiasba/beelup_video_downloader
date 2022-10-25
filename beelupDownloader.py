@@ -12,7 +12,7 @@ clips_path = os.path.join(script_dir, "clips/")
 final_video_path = os.path.join(script_dir, "videos/")
 ffmpeg = "C:/Users/<user>/Downloads/ffmpeg-2022-10-13-git-9e8a327e68-full_build/bin/ffmpeg"
 series_name = "La liga de los malos"
-id_link = 0000000  # simple
+id_link = 0000000
 
 
 def save_flist(files):
