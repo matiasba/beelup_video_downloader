@@ -12,7 +12,7 @@
 <img src="img/double.jpg" alt="drawing" height="400" title="Camara doble"/>
 
 #### Camara Triple
-![alt text](https://github.com/matiasba/beelup_video_downloader/blob/main/img/triple.jpg?raw=true "Camara triple")
+<img src="img/triple.jpg" alt="drawing" height="400" title="Camara triple"/>
 
 ## Requisitos:
 
