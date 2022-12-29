@@ -11,6 +11,9 @@
 #### Camara Doble
 ![alt text](https://github.com/matiasba/beelup_video_downloader/blob/main/img/double.jpg?raw=true "Camara doble")
 
+#### Camara Triple
+![alt text](https://github.com/matiasba/beelup_video_downloader/blob/main/img/triple.jpg?raw=true "Camara triple")
+
 ## Requisitos:
 
 Tener bajado la version más reciente de [ffmpeg](https://ffmpeg.org/download.html)
@@ -46,3 +49,4 @@ Iniciar `beelupDownloader.py`
 ```
 python3 beelupDownloader.py
 ```
+Tener en cuenta que para videos con doble o triple camara el proceso puede llevar más de 30m (dependiendo de tu cpu), ya que es necesario re-encodear el video.
