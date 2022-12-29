@@ -12,7 +12,7 @@ clips_path = os.path.join(script_dir, "clips/")
 final_video_path = os.path.join(script_dir, "videos/")
 ffmpeg = "C:/Users/<user>/Downloads/ffmpeg-2022-10-13-git-9e8a327e68-full_build/bin/ffmpeg"
 series_name = "SuperCampeones"
-id_link = 5028143  # simple
+id_link = 5028143
 
 
 def save_flist(files):
