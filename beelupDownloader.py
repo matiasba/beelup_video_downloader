@@ -25,8 +25,8 @@ def save_flist(files):
     return f_list
 
 
-def download_videos(in_video_list, in_side):
-    c_list = in_video_list['720']['videos']
+def download_videos(in_video_list, in_side, in_calidad):
+    c_list = in_video_list[in_calidad]['videos']
     for index, video in enumerate(c_list):
         clip_name = f'clip-{id_link}-{in_side}-{index}.mp4'
         next_clip_name = f'clip-{id_link}-{in_side}-{index + 1}.mp4'
@@ -52,10 +52,11 @@ ajustes_lista = json.loads(re.findall("g_video_ajustes = JSON\.parse\('(.*)'\)",
 fecha_inicio = re.findall("fecha_inicio.*\'(.*)\'", html)[0]
 date = datetime.datetime.strptime(fecha_inicio, '%Y-%m-%d %H:%M:%S.%f')
 complejo = re.findall("complejo.*\'(.*)\'", html)[0]
+calidad = re.findall('var g_calidad = "(.*)"', html)[0]
 cancha = re.findall("cancha: \'(.*)\'", html)[0].replace(' -', '')
 final_file_name = f'{series_name} - {datetime.datetime.strftime(date, "%Y-%m-%d")} - {complejo} {cancha}.mp4'
 for side in video_lista.keys():
-    download_videos(video_lista[side], side)
+    download_videos(video_lista[side], side, calidad)
 
 for side in video_lista.keys():
     os.chdir(clips_path)
@@ -79,6 +80,8 @@ if len(video_lista.keys()) == 2:
     call = f'{ffmpeg} -i izq-{id_link}.mp4 -i der-{id_link}.mp4 -filter_complex "[0:v][1:v]hstack=inputs=2[v];[0:a][1:a]amerge=inputs=2[a]" -map "[v]" -map "[a]" -ac 2 "{final_file_name}"'
 if len(video_lista.keys()) == 3:
     call = f'{ffmpeg} -i izq-{id_link}.mp4 -i central-{id_link}.mp4 -i der-{id_link}.mp4 -filter_complex "[0:v][1:v]hstack=inputs=3[v];[0:a][1:a]amerge=inputs=3[a]" -map "[v]" -map "[a]" -ac 2 "{final_file_name}"'
+if len(video_lista.keys()) == 4:
+    call = f'{ffmpeg} -i izq-{id_link}.mp4 -i central-{id_link}.mp4 -i central2-{id_link}.mp4 -i der-{id_link}.mp4 -filter_complex "[0:v][1:v]hstack=inputs=4[v];[0:a][1:a]amerge=inputs=4[a]" -map "[v]" -map "[a]" -ac 2 "{final_file_name}"'
 os.system(call)
 
 # Clean up compiled clips
